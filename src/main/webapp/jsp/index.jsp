@@ -1,13 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
-
 <%@page import="java.util.List"%>
 <%@page import="java.util.Iterator"%>
-<%-- <%@page import="youtunes.model.Album"%> --%>
+<%@page import="youtunes.model.Album"%>
 
-<%-- <jsp:useBean id="albumDao" scope="application" class="youtunes.service.impl.JdbcAlbumDao" /> --%>
-
+<jsp:useBean id="albumDao" scope="application" class="youtunes.service.impl.JdbcAlbumDao" />
 
 
 <!DOCTYPE html>
@@ -31,11 +29,11 @@
 			<div class="row py-lg-5">
 				<div class="col-lg-6 col-md-8 mx-auto">
 					<h1 class="fw-light">YouTunes</h1>
-					<p class="lead text-muted">Welcome to YouTunes, your "one stop
-						shop" to all of your music needs. Below you will find a list of
-						our current selection. To add a new album, click on the "New Music
-						Album" button. For artists, select the "Artist" link from the
-						top-hand menu pane.</p>
+					<p class="lead text-muted">Welcome to the YouTunes web application, the best place to 
+					manage all your favorite artists and albums. If you scroll down you'll see a list of 
+					our current top selections. However, if those selections aren't for you or you 
+					want to add or remove anything, feel free to click the the corresponding button below
+					to get started and really make this YouTunes page your own.</p>
 					<p>
 						<a href="store?action=newAlbum" class="btn btn-primary my-2">New Music Album</a>
 					</p>
@@ -47,36 +45,36 @@
 			<div class="container">
 				<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 				
-					<%-- <%
+					<%
 						List<Album> albums = albumDao.list();
 						Iterator<Album> iterator = albums.iterator();
 						while (iterator.hasNext())
 						{
 							Album album = (Album)iterator.next();
-					%> --%>
+					%>
 					
 					<div class="col">
 						<div class="card shadow-sm">
-							<img src="/youtunes/images/<%/*=album.getImgUrl()*/%>" height="400" class="card-img-top" />
+							<img src="/youtunes/images/<%=album.getImgUrl()%>" height="400" class="card-img-top" />
 
 							<div class="card-body">
 								<p class="card-text">
-									<span><%/*=album.getTitle()*/%></span>
+									<span><%=album.getTitle()%></span>
 									<br />
-									<small class="text-muted"><em><%/*=album.getGenre()*/%></em></small>
+									<small class="text-muted"><em><%=album.getGenre()%></em></small>
 								</p>
 								
 								<div class="d-flex justify-content-between align-items-center">
 									<div class="btn-group">
-										<a href="store?action=albumDetails&albumId=<%/*=album.getAlbumId()*/%>" class="btn btn-sm btn-outline-secondary">Edit</a>
-										<a href="store?action=deleteAlbum&albumId=<%/*=album.getAlbumId()*/%>" class="btn btn-sm btn-outline-secondary">Delete</a>
+										<a href="store?action=albumDetails&albumId=<%=album.getAlbumId()%>" class="btn btn-sm btn-outline-secondary">Edit</a>
+										<a href="store?action=deleteAlbum&albumId=<%=album.getAlbumId()%>" class="btn btn-sm btn-outline-secondary">Delete</a>
 									</div>
-									<small class="text-muted">$<%/*=album.getPrice()*/%></small>
+									<small class="text-muted">$<%=album.getPrice()%></small>
 								</div>
 							</div>
 						</div>
 					</div>
-					<%/* } */ %>
+					<% } %>
 				</div>
 			</div>
 		</div>

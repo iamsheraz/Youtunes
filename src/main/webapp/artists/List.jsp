@@ -1,24 +1,28 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
+    
 <%@page import="java.util.List"%>
 <%@page import="java.util.Iterator"%>
 <%@page import="youtunes.model.Artist"%>
 
-<jsp:useBean id="artistDao" scope="application" class="youtunes.service.impl.JdbcArtistDao" />
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>YouTunes | Artist List</title>
-<!--  Bootstrap StyleSheet CDN -->
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-	crossorigin="anonymous">
-	
-<link rel="stylesheet" href="/youtunes/css/site.css" type="text/css" />
-</head>
+	<head>
+		<meta charset="UTF-8">
+		
+		
+		
+		<link href="/youtunes/CSS/styles.css" rel="stylesheet" type="text/css"/>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;700&family=VT323&display=swap" rel="stylesheet">
+		<%@page import="youtunes.service.impl.JdbcArtistDao, youtunes.model.Artist, java.util.List" %>
+		<% String base = (String)application.getAttribute("base"); %>
+		<jsp:useBean id="artistDao" scope="application" class="youtunes.service.impl.JdbcArtistDao" />
+		
+		<title>YouTunes | Artists</title>
+	</head>
 <body>
 	<jsp:include page="../jsp/TopNav.jsp" flush="true" />
 
